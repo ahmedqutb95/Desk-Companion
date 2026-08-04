@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Desk Companion Dashboard</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>AI Desk Companion</h1>
+
+        <section>
+            <h2>Connection</h2>
+
+            <input
+                id="ipInput"
+                type="text"
+                placeholder="ESP32 IP Address">
+
+            <button id="connectBtn">
+                Connect
+            </button>
+
+            <p id="status">
+                🔴 Disconnected
+            </p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Display Text</h2>
+
+            <input
+                id="textInput"
+                type="text"
+                placeholder="Enter text">
+
+            <button id="sendBtn">
+                Send
+            </button>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Preview</h2>
+
+            <div id="preview">
+                Hello
+            </div>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Console</h2>
+
+            <div id="console"></div>
+        </section>
+
+    </div>
+
+    <script src="js/protocol.js"></script>
+    <script src="js/websocket.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
