@@ -9,14 +9,19 @@ void setupDisplay()
     tft.init();
     tft.setRotation(0);
 
+    displayText("Hello");
+}
+
+void loopDisplay()
+{
+}
+
+void displayText(const char* text)
+{
     tft.fillScreen(TFT_BLACK);
 
     tft.setTextDatum(MC_DATUM);
     tft.setTextColor(TFT_WHITE);
 
-    tft.drawString("Hello", 120, 120, 4);
-}
-
-void loopDisplay()
-{
+    tft.drawString(text, 120, 120, 4);
 }
