@@ -1,6 +1,10 @@
 # PlatformIO build files
 **/.pio/
 
+# Node.js
+**/node_modules/
+**/dist/
+
 # Python cache
 **/__pycache__/
 
@@ -10,3 +14,6 @@
 # Windows
 Thumbs.db
 Desktop.ini
+
+# Local archives
+Dashboard replit.zip
