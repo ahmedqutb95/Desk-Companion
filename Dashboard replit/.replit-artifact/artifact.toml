@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "AI Desk Companion Dashboard"
+description = "A developer dashboard for controlling and monitoring an AI Desk Companion device. Communicates with an ESP32 over WebSocket. Features a live circular TFT preview, Pomodoro timer, prayer schedule, health reminders, task queue, white noise player, theme controls, and a real-time event log. Dark-first, minimal, premium feel."
+version = "1.0.0"
+id = "artifacts/desk-companion"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18479
+
+[services.development]
+run = "pnpm --filter @workspace/desk-companion run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/desk-companion", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/desk-companion/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18479"
+BASE_PATH = "/"
